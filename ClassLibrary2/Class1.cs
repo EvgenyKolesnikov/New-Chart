@@ -121,10 +121,11 @@ namespace TestChart
                 {ChartImageFormat.Png,"Png" },
                 {ChartImageFormat.Tiff,"Tiff" }
             };
-            ChartImageFormat ExportFormat = (ChartImageFormat)image_format.FirstOrDefault(x => x.Value == Format).Key;
+            
 
             try
             {
+                ChartImageFormat ExportFormat = (ChartImageFormat)image_format.FirstOrDefault(x => x.Value == Format).Key;
                 string PathName = Path + "\\chart." + Format;
                 chart.SaveImage(PathName, ExportFormat);
                 

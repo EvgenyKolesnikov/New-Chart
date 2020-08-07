@@ -16,7 +16,7 @@ namespace ConsoleApp7
             TestChart.MyChart chart = new TestChart.MyChart();
 
             bool log_create_chart = chart.Create_Chart(Sales_Comparison);
-            bool log_save_chart = chart.Save_Chart(Environment.CurrentDirectory,"Jpeg");
+            bool log_save_chart = chart.Save_Chart(Environment.CurrentDirectory,"Jpegg");
             
             Console.WriteLine("Creating chart: " + log_create_chart);
             Console.WriteLine("Saving chart: " + log_save_chart);
