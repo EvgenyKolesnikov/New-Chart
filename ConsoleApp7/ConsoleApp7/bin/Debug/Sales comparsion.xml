@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Chart>
 	<Title> Sales Comprasion</Title>
-	<ExportFormat>Jpeg</ExportFormat>
 	<Size>
 		<Width> 700</Width>
 		<Height> 300</Height>
@@ -51,6 +50,28 @@
 		<Point><Name> Oct </Name> <Value> 2800</Value></Point>
 		<Point><Name> Nov </Name> <Value> 3000</Value></Point>
 		<Point><Name> Dec </Name> <Value> 1900</Value></Point>	
+	</Series>
+	
+	<Series id= "Sales 2018">
+		<Color>Green</Color>
+		<BorderWidth>3</BorderWidth>
+		<BorderDashStyle>Dash dot dot</BorderDashStyle>
+		<IsVisibleInLegend>true</IsVisibleInLegend>
+		<Label>null</Label>
+		<ChartType>Line</ChartType>
+		
+		<Point><Name> Jan </Name> <Value> 900</Value></Point>
+		<Point><Name> Feb </Name> <Value> 1400</Value></Point>
+		<Point><Name> Mar </Name> <Value> 300</Value></Point>
+		<Point><Name> Apr </Name> <Value> 2000</Value></Point>
+		<Point><Name> May </Name> <Value> 2200</Value></Point>
+		<Point><Name> June </Name> <Value> 2800</Value></Point>
+		<Point><Name> Jule </Name> <Value> 2200</Value></Point>
+		<Point><Name> Aug </Name> <Value> 2900</Value></Point>
+		<Point><Name> Sep </Name> <Value> 1100</Value></Point>
+		<Point><Name> Oct </Name> <Value> 2250</Value></Point>
+		<Point><Name> Nov </Name> <Value> 4000</Value></Point>
+		<Point><Name> Dec </Name> <Value> 900</Value></Point>	
 	</Series>
 	
 	

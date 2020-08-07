@@ -10,16 +10,11 @@ namespace TestChart
     public class MyChart
     {
         Chart chart = new Chart();
-
-        XmlDocument Data;
-        public MyChart(XmlDocument n) { Data = n;} 
-
-
         public delegate void ErrorEventHandler(object sender, string e);
         public event ErrorEventHandler Error;
         protected virtual void OnError(string e) { if (Error != null) {Error(this, e); }; }
 
-        public bool Create_Chart()
+        public bool Create_Chart(XmlDocument Data)
         {
             Dictionary<object, string> chart_types = new Dictionary<object, string>
             {
@@ -113,7 +108,7 @@ namespace TestChart
         }
 
         
-        public bool Save_Chart(string Path)
+        public bool Save_Chart(string Path, string Format)
         {
             Dictionary<object, string> image_format = new Dictionary<object, string>
             {
@@ -126,11 +121,11 @@ namespace TestChart
                 {ChartImageFormat.Png,"Png" },
                 {ChartImageFormat.Tiff,"Tiff" }
             };
-            ChartImageFormat ExportFormat = (ChartImageFormat)image_format.FirstOrDefault(x => x.Value == Data.SelectSingleNode("//Chart//ExportFormat").InnerText).Key;
+            ChartImageFormat ExportFormat = (ChartImageFormat)image_format.FirstOrDefault(x => x.Value == Format).Key;
 
             try
             {
-                string PathName = Path + "\\chart." + Data.SelectSingleNode("//Chart//ExportFormat").InnerText;
+                string PathName = Path + "\\chart." + Format;
                 chart.SaveImage(PathName, ExportFormat);
                 
                 return true;
