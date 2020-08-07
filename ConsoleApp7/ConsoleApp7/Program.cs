@@ -12,14 +12,15 @@ namespace ConsoleApp7
     {
         static void Main(string[] args)
         {
-            XmlDocument Sales_Comparison = (XmlDocument)TestChart.MyChart.GetDataFromXML(Environment.CurrentDirectory + "\\Sales comparsion.xml");
-            TestChart.MyChart chart = new TestChart.MyChart();
+            XmlDocument Sales_Comparison = (XmlDocument)TestChart.GetData.GetDataFromXML(Environment.CurrentDirectory + "\\Sales comparsion.xml");
+            TestChart.MyChart chart = new TestChart.MyChart(Sales_Comparison);
 
-            bool log_create_chart = chart.Create_Chart(Sales_Comparison, "Sales 2019", "Sales 2020");
+            bool log_create_chart = chart.Create_Chart();
             bool log_save_chart = chart.Save_Chart(Environment.CurrentDirectory);
             
             Console.WriteLine("Creating chart: " + log_create_chart);
             Console.WriteLine("Saving chart: " + log_save_chart);
+            Console.WriteLine("Save Path: " + Environment.CurrentDirectory);
 
             Console.ReadKey();
         }

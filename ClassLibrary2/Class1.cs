@@ -11,7 +11,15 @@ namespace TestChart
     {
         Chart chart = new Chart();
 
-        public bool Create_Chart(XmlDocument Data, params string[] Series)
+        XmlDocument Data;
+        public MyChart(XmlDocument n) { Data = n;} 
+
+
+        public delegate void ErrorEventHandler(object sender, string e);
+        public event ErrorEventHandler Error;
+        protected virtual void OnError(string e) { if (Error != null) {Error(this, e); }; }
+
+        public bool Create_Chart()
         {
             Dictionary<object, string> chart_types = new Dictionary<object, string>
             {
@@ -59,19 +67,22 @@ namespace TestChart
 
             try
             {
+                XmlNodeList Series = Data.SelectNodes("//Chart//Series");
+
                 chart.Titles.Add(Data.SelectSingleNode("//Chart/Title").InnerText);                               //Имя диаграммы 
                 chart.Width = Convert.ToInt32(Data.SelectSingleNode("//Chart/Size/Width").InnerText);            //Высота
                 chart.Height = Convert.ToInt32(Data.SelectSingleNode("//Chart/Size/Height").InnerText);         //Ширина
+                
+                chart.ChartAreas.Add(Series[0].Attributes[0].InnerText);                                             //создание ChartArea
+                chart.ChartAreas[Series[0].Attributes[0].InnerText].AxisX.Interval = 1;                             //интервал сетки
+                chart.ChartAreas[Series[0].Attributes[0].InnerText].AxisX.MajorGrid.LineColor = Color.DarkGray;    //Цвет сетки (Ось Х)
+                chart.ChartAreas[Series[0].Attributes[0].InnerText].AxisY.MajorGrid.LineColor = Color.DarkGray;   //Цвет сетки (Ось Y)
 
-                chart.ChartAreas.Add(Series[0]);                                                              //создание ChartArea
-                chart.ChartAreas[Series[0]].AxisX.Interval = 1;                                              //интервал сетки
-                chart.ChartAreas[Series[0]].AxisX.MajorGrid.LineColor = Color.DarkGray;                     //Цвет сетки (Ось Х)
-                chart.ChartAreas[Series[0]].AxisY.MajorGrid.LineColor = Color.DarkGray;                    //Цвет сетки (Ось Y)
-
-                foreach (string Series_id in Series)
+                foreach (XmlNode xNode in Series)
                 {
-                    chart.Series.Add(Series_id);
+                    string Series_id = xNode.Attributes[0].InnerText;
 
+                    chart.Series.Add(Series_id);
                     chart.Series[Series_id].IsVisibleInLegend = Convert.ToBoolean(Data.SelectSingleNode("//Chart//Series[@id = '" + Series_id + "']//IsVisibleInLegend").InnerText);                                                  // Легенда
                     chart.Series[Series_id].Color = (System.Drawing.Color)chart_colors.FirstOrDefault(x => x.Value == Data.SelectSingleNode("//Chart//Series[@id = '" + Series_id + "']/Color").InnerText).Key;                      // Цвет
                     chart.Series[Series_id].BorderWidth = Convert.ToInt32(Data.SelectSingleNode("//Chart//Series[@id = '" + Series_id + "']/BorderWidth").InnerText);                                                               // Толщина линий (Line only)
@@ -96,10 +107,43 @@ namespace TestChart
             }
             catch (Exception e)
             {
+               OnError(e.Message);
                return false;
             }
         }
 
+        
+        public bool Save_Chart(string Path)
+        {
+            Dictionary<object, string> image_format = new Dictionary<object, string>
+            {
+                {ChartImageFormat.Bmp,"Bmp" },
+                {ChartImageFormat.Emf, "Emf"},
+                {ChartImageFormat.EmfDual,"EmfDual"},
+                {ChartImageFormat.EmfPlus, "EmfPlus"},
+                {ChartImageFormat.Gif, "Gif"},
+                {ChartImageFormat.Jpeg, "Jpeg"},
+                {ChartImageFormat.Png,"Png" },
+                {ChartImageFormat.Tiff,"Tiff" }
+            };
+            ChartImageFormat ExportFormat = (ChartImageFormat)image_format.FirstOrDefault(x => x.Value == Data.SelectSingleNode("//Chart//ExportFormat").InnerText).Key;
+
+            try
+            {
+                string PathName = Path + "\\chart." + Data.SelectSingleNode("//Chart//ExportFormat").InnerText;
+                chart.SaveImage(PathName, ExportFormat);
+                
+                return true;
+            }
+            catch (Exception e)
+            {
+                OnError(e.Message);
+                return false;
+            }
+        }
+    }
+    public class GetData
+    {
         public static object GetDataFromXML(string Path)
         {
             XmlDocument xDoc = new XmlDocument();
@@ -107,19 +151,14 @@ namespace TestChart
 
             return xDoc;
         }
-        public bool Save_Chart(string Path)
-        {
-            try
-            {
-                string PathName = Path + "\\chart.png";
-                chart.SaveImage(PathName, ChartImageFormat.Png);
 
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
-        }
+
     }
+
+
+
+
+
+
+
 }

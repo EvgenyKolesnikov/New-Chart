@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Chart>
 	<Title> Sales Comprasion</Title>
-	
+	<ExportFormat>Jpeg</ExportFormat>
 	<Size>
 		<Width> 700</Width>
 		<Height> 300</Height>
@@ -11,10 +11,10 @@
 	
 	<Series id= "Sales 2019">
 		<Color>Blue</Color>
-		<BorderWidth>5</BorderWidth>
+		<BorderWidth>10</BorderWidth>
 		<BorderDashStyle>Dash</BorderDashStyle>
 		<IsVisibleInLegend>true</IsVisibleInLegend>
-		<Label>null</Label>
+		<Label>Percent</Label>
 		<ChartType>Line</ChartType>
 		
 		<Point><Name> Jan </Name> <Value> 700</Value></Point>
@@ -36,7 +36,7 @@
 		<BorderWidth>5</BorderWidth>
 		<BorderDashStyle>Solid</BorderDashStyle>
 		<IsVisibleInLegend>true</IsVisibleInLegend>
-		<Label>Value</Label>
+		<Label>null</Label>
 		<ChartType>Line</ChartType>
 		
 		<Point><Name> Jan </Name> <Value> 1000</Value></Point>
