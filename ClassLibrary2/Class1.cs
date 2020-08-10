@@ -14,7 +14,7 @@ namespace TestChart
         public event ErrorEventHandler Error;
         protected virtual void OnError(string e) { if (Error != null) {Error(this, e); }; }
 
-        public bool Create_Chart(XmlDocument Data)
+        public bool Create_Charts(XmlDocument Data)
         {
             Dictionary<object, string> chart_types = new Dictionary<object, string>
             {
@@ -77,6 +77,7 @@ namespace TestChart
                 {
                     string Series_id = xNode.Attributes[0].InnerText;
 
+                    chart.Legends.Add(Series_id);
                     chart.Series.Add(Series_id);
                     chart.Series[Series_id].IsVisibleInLegend = Convert.ToBoolean(Data.SelectSingleNode("//Chart//Series[@id = '" + Series_id + "']//IsVisibleInLegend").InnerText);                                                  // Легенда
                     chart.Series[Series_id].Color = (System.Drawing.Color)chart_colors.FirstOrDefault(x => x.Value == Data.SelectSingleNode("//Chart//Series[@id = '" + Series_id + "']/Color").InnerText).Key;                      // Цвет

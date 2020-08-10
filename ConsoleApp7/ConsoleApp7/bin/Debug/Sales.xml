@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Chart>
+	<Title> Sales Comprasion</Title>
+	<Size>
+		<Width> 700</Width>
+		<Height> 300</Height>
+	</Size>
+	
+	
+	
+	<Series id= "Sales 2019">
+		<Color>Blue</Color>
+		<BorderWidth>10</BorderWidth>
+		<BorderDashStyle>Dash</BorderDashStyle>
+		<IsVisibleInLegend>true</IsVisibleInLegend>
+		<Label>Value</Label>
+		<ChartType>Pie</ChartType>
+		
+		<Point><Name> Jan </Name> <Value> 700</Value></Point>
+		<Point><Name> Feb </Name> <Value> 1500</Value></Point>
+		<Point><Name> Mar </Name> <Value> 300</Value></Point>
+		<Point><Name> Apr </Name> <Value> 800</Value></Point>
+		<Point><Name> May </Name> <Value> 1300</Value></Point>
+		<Point><Name> June </Name> <Value> 2800</Value></Point>
+		<Point><Name> Jule </Name> <Value> 2100</Value></Point>
+		<Point><Name> Aug </Name> <Value> 1800</Value></Point>
+		<Point><Name> Sep </Name> <Value> 2300</Value></Point>
+		<Point><Name> Oct </Name> <Value> 800</Value></Point>
+		<Point><Name> Nov </Name> <Value> 3000</Value></Point>
+		<Point><Name> Dec </Name> <Value> 2200</Value></Point>	
+	</Series>
+	
+
+	
+	
+	
+	
+</Chart>
