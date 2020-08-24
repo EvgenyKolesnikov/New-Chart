@@ -1,0 +1,6 @@
+C:\Users\Jenya\Desktop\Progging\C#\New Chart\New-Chart\ClassLibrary2\obj\Debug\MccCharts.csprojAssemblyReference.cache
+C:\Users\Jenya\Desktop\Progging\C#\New Chart\New-Chart\ClassLibrary2\obj\Debug\MccCharts.csproj.CoreCompileInputs.cache
+C:\Users\Jenya\Desktop\Progging\C#\New Chart\New-Chart\ClassLibrary2\bin\Debug\MccCharts.dll
+C:\Users\Jenya\Desktop\Progging\C#\New Chart\New-Chart\ClassLibrary2\bin\Debug\MccCharts.pdb
+C:\Users\Jenya\Desktop\Progging\C#\New Chart\New-Chart\ClassLibrary2\obj\Debug\MccCharts.dll
+C:\Users\Jenya\Desktop\Progging\C#\New Chart\New-Chart\ClassLibrary2\obj\Debug\MccCharts.pdb

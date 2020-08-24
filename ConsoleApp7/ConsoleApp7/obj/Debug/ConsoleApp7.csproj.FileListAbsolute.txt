@@ -11,10 +11,10 @@ C:\Users\Jenya\source\repos\ConsoleApp7\ConsoleApp7\bin\Debug\ClassLibrary2.dll
 C:\Users\Jenya\Desktop\Progging\C#\New Chart\New-Chart\ConsoleApp7\ConsoleApp7\bin\Debug\ConsoleApp7.exe.config
 C:\Users\Jenya\Desktop\Progging\C#\New Chart\New-Chart\ConsoleApp7\ConsoleApp7\bin\Debug\ConsoleApp7.exe
 C:\Users\Jenya\Desktop\Progging\C#\New Chart\New-Chart\ConsoleApp7\ConsoleApp7\bin\Debug\ConsoleApp7.pdb
-C:\Users\Jenya\Desktop\Progging\C#\New Chart\New-Chart\ConsoleApp7\ConsoleApp7\bin\Debug\ClassLibrary2.pdb
 C:\Users\Jenya\Desktop\Progging\C#\New Chart\New-Chart\ConsoleApp7\ConsoleApp7\obj\Debug\ConsoleApp7.csproj.CoreCompileInputs.cache
 C:\Users\Jenya\Desktop\Progging\C#\New Chart\New-Chart\ConsoleApp7\ConsoleApp7\obj\Debug\ConsoleApp7.csproj.CopyComplete
 C:\Users\Jenya\Desktop\Progging\C#\New Chart\New-Chart\ConsoleApp7\ConsoleApp7\obj\Debug\ConsoleApp7.exe
 C:\Users\Jenya\Desktop\Progging\C#\New Chart\New-Chart\ConsoleApp7\ConsoleApp7\obj\Debug\ConsoleApp7.pdb
-C:\Users\Jenya\Desktop\Progging\C#\New Chart\New-Chart\ConsoleApp7\ConsoleApp7\bin\Debug\ClassLibrary2.dll
 C:\Users\Jenya\Desktop\Progging\C#\New Chart\New-Chart\ConsoleApp7\ConsoleApp7\obj\Debug\ConsoleApp7.csprojAssemblyReference.cache
+C:\Users\Jenya\Desktop\Progging\C#\New Chart\New-Chart\ConsoleApp7\ConsoleApp7\bin\Debug\MccCharts.dll
+C:\Users\Jenya\Desktop\Progging\C#\New Chart\New-Chart\ConsoleApp7\ConsoleApp7\bin\Debug\MccCharts.pdb

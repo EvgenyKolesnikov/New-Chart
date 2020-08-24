@@ -5,9 +5,9 @@ using System.Windows.Forms.DataVisualization.Charting;
 using System.Drawing;
 using System.Xml;
 
-namespace TestChart
+namespace MccCharts
 {
-    public class MyChart
+    public class Charts
     {
         Chart chart = new Chart();
         public delegate void ErrorEventHandler(object sender, string e);
